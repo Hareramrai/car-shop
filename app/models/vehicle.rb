@@ -26,5 +26,10 @@
 #
 
 class Vehicle < ApplicationRecord
+
+  #validation
+  validates :mileage, :grade, :price, :vin, :year, presence: true
+
+  #relationship
   belongs_to :model_feature
 end

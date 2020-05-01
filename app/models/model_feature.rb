@@ -4,8 +4,8 @@
 #
 #  id            :bigint           not null, primary key
 #  body_type     :integer
-#  cylinders     :string
-#  displacement  :string
+#  cylinders     :integer
+#  displacement  :integer
 #  manufacturer  :string
 #  model         :string
 #  series        :string
@@ -26,8 +26,14 @@
 class ModelFeature < ApplicationRecord
   enum body_type: {
     sedan: 0, suv: 1, convertible: 2, wagon_hatchback: 3, pickup: 4,
-    crossover_utility_vehicle: 5, van: 6, coupe: 7, minivan: 8
+    crossover_utility_vehicle: 5, van: 6, coupe: 7, minivan: 8, wagon: 9
   }
+
+  #validations
+  validates :manufacturer, :body_type, :model, :series, presence: true
+
+  #relationship
+  has_many :vehicles
 
   belongs_to :body_color
 end

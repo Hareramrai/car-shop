@@ -10,4 +10,10 @@
 #
 
 class BodyColor < ApplicationRecord
+
+  #validations
+  validates :interior, :exterior, presence: true
+
+  # relationship
+  has_many :model_features
 end

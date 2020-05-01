@@ -27,12 +27,12 @@
 
 FactoryBot.define do
   factory :vehicle do
-    vin { "MyString" }
+    vin { 'x123' }
     grade { 1.5 }
-    stock { 1 }
-    price { "9.99" }
-    year { 1 }
-    mileage { 1 }
-    model_feature { nil }
+    stock { 10 }
+    price { 9.99 }
+    year { 2020 }
+    mileage { 1000 }
+    model_feature
   end
 end

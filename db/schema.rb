@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_084201) do
     t.string "model"
     t.string "series"
     t.integer "body_type"
-    t.string "cylinders"
-    t.string "displacement"
+    t.integer "cylinders"
+    t.integer "displacement"
     t.bigint "body_color_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

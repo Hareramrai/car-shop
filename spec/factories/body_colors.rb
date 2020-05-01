@@ -11,7 +11,7 @@
 
 FactoryBot.define do
   factory :body_color do
-    interior { "MyString" }
-    exterior { "MyString" }
+    interior { "Red" }
+    exterior { "Black" }
   end
 end
