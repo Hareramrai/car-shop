@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: model_features
@@ -5,7 +7,7 @@
 #  id            :bigint           not null, primary key
 #  body_type     :integer
 #  cylinders     :integer
-#  displacement  :integer
+#  displacement  :float
 #  manufacturer  :string
 #  model         :string
 #  series        :string
@@ -29,11 +31,11 @@ class ModelFeature < ApplicationRecord
     crossover_utility_vehicle: 5, van: 6, coupe: 7, minivan: 8, wagon: 9
   }
 
-  #validations
+  # validations
   validates :manufacturer, :body_type, :model, :series, presence: true
 
-  #relationship
-  has_many :vehicles
+  # relationship
+  has_many :vehicles, dependent: :destroy
 
   belongs_to :body_color
 end

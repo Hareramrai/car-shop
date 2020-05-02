@@ -27,7 +27,7 @@
 
 FactoryBot.define do
   factory :vehicle do
-    vin { 'x123' }
+    sequence(:vin) { |n| "V12#{n}" }
     grade { 1.5 }
     stock { 10 }
     price { 9.99 }

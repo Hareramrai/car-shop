@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vehicles
   class Importer
     def initialize(batch_size: 500)
@@ -12,7 +14,7 @@ module Vehicles
     end
 
     def import
-      result = Vehicle.import batch_record, validate: true
+      Vehicle.import batch_record, validate: true
       @batch_record = []
     end
 

@@ -1,0 +1,33 @@
+= search_form_for @search, url: vehicles_url, method: :get, class: 'form-horizontal' do |f|
+  .form-group
+    = f.label :mileage, class: 'control-label col-lg-2'
+    .col-lg-10
+      .col-lg-5
+        = f.text_field :mileage_gteq, class: 'form-control', placeholder: 'Mileage greater than'
+      .col-lg-5
+        = f.text_field :mileage_lteq, class: 'form-control', placeholder: 'Mileage less than'
+  .form-group
+    = f.label :price, class: 'control-label col-lg-2'
+    .col-lg-10
+      .col-lg-5
+        = f.text_field :price_gteq, class: 'form-control', placeholder: 'Price greater than'
+      .col-lg-5
+        = f.text_field :price_lteq, class: 'form-control', placeholder: 'Price less than'
+
+  .form-group
+    = f.label :color, class: 'control-label col-lg-2'
+    .col-lg-10
+      .col-lg-5
+        = f.select :body_color_interior_eq, interior_color_for_select, { prompt: 'Choose interior', include_blank: true }, { class: 'form-control' }
+      .col-lg-5
+        = f.select :body_color_exterior_eq, exterior_color_for_select, { prompt: 'Choose exterior', include_blank: true }, { class: 'form-control' }
+
+  .form-group
+    = f.label :body_type, class: 'control-label col-lg-2'
+    .col-lg-10
+      .col-lg-5
+        = f.select :model_feature_body_type_eq, body_type_for_select, { prompt: 'Choose body', include_blank: true }, { class: 'form-control' }
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit nil, class: 'btn btn-primary margin-lf-15'

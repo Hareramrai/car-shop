@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  body_type     :integer
 #  cylinders     :integer
-#  displacement  :integer
+#  displacement  :float
 #  manufacturer  :string
 #  model         :string
 #  series        :string

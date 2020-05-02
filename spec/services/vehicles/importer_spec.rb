@@ -12,7 +12,7 @@ RSpec.describe Vehicles::Importer, type: :model do
     end
 
     it "won't invoke import when have record less than batch size" do
-      expect{ subject.add(vehicle) }.to change{ Vehicle.count }.by(0)
+      expect { subject.add(vehicle) }.to change { Vehicle.count }.by(0)
     end
   end
 
@@ -20,7 +20,7 @@ RSpec.describe Vehicles::Importer, type: :model do
     it 'saves existing data' do
       subject.add(vehicle)
 
-      expect{ subject.import }.to change{ Vehicle.count }.by(1)
+      expect { subject.import }.to change { Vehicle.count }.by(1)
     end
   end
 end

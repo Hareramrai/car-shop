@@ -5,7 +5,7 @@ namespace :imports do
     begin
       Vehicles::CsvImporter.new(args[:file_path]).call
       puts 'Imports completed'
-    rescue Exception => e
+    rescue StandardError => e
       puts "Failed to import #{e.message}"
       puts "Backtrace:\n\t#{e.backtrace.join("\n\t")}"
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vehicles
   class ParseVehicle
     def initialize(raw_vehicle)
@@ -6,13 +8,13 @@ module Vehicles
 
     def call
       {
-        grade:             raw_vehicle[:grade],
-        mileage:           raw_vehicle[:mileage],
-        price:             raw_vehicle[:price],
-        stock:             raw_vehicle[:stocknumber],
-        vin:               raw_vehicle[:vin],
-        year:              raw_vehicle[:year],
-        model_feature_id:  find_model_feature_id
+        grade: raw_vehicle[:grade],
+        mileage: raw_vehicle[:mileage],
+        price: raw_vehicle[:price],
+        stock: raw_vehicle[:stocknumber],
+        vin: raw_vehicle[:vin],
+        year: raw_vehicle[:year],
+        model_feature_id: find_model_feature_id
       }
     end
 
@@ -28,13 +30,13 @@ module Vehicles
 
     def find_model_feature_id
       finder_fields = {
-        body_type:      body_type,
-        cylinders:      raw_vehicle[:cylinders],
-        displacement:   raw_vehicle[:displacement]&.gsub(/l/,''),
-        manufacturer:   raw_vehicle[:make],
-        model:          raw_vehicle[:model],
-        series:         raw_vehicle[:series],
-        body_color_id:  body_color_id
+        body_type: body_type,
+        cylinders: raw_vehicle[:cylinders],
+        displacement: raw_vehicle[:displacement]&.gsub(/l/, ''),
+        manufacturer: raw_vehicle[:make],
+        model: raw_vehicle[:model],
+        series: raw_vehicle[:series],
+        body_color_id: body_color_id
       }
 
       ModelFeature.find_or_create_by(finder_fields).id
@@ -42,12 +44,11 @@ module Vehicles
 
     def body_color_id
       finder_fields = {
-        exterior:  raw_vehicle[:exterior],
-        interior:  raw_vehicle[:interior]
+        exterior: raw_vehicle[:exterior],
+        interior: raw_vehicle[:interior]
       }
 
       BodyColor.find_or_create_by(finder_fields).id
     end
-
   end
 end

@@ -20,11 +20,11 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="#") Car Shop
+        %a.navbar-brand(href="/") Car Shop
 
     .container
-      .row
-        .col-lg-9
+      .row.min-row-container
+        .col-lg-12
           = bootstrap_flash
           = yield
     %footer

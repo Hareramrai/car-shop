@@ -1,1 +1,39 @@
-%h1="Vehicles"
+- model_class = Vehicle
+.page-header
+  %h3=t '.title', :default => model_class.model_name.human.pluralize.titleize
+
+= render partial: 'search_form'
+
+= paginate @vehicles, theme: 'twitter-bootstrap-4'
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:vin)
+      %th= model_class.human_attribute_name(:grade)
+      %th= model_class.human_attribute_name(:price)
+      %th= model_class.human_attribute_name(:year)
+      %th= model_class.human_attribute_name(:mileage)
+      %th= model_class.human_attribute_name(:manufacturer)
+      %th= model_class.human_attribute_name(:model)
+      %th= model_class.human_attribute_name(:series)
+      %th= model_class.human_attribute_name(:body_type)
+      %th= model_class.human_attribute_name(:interior)
+      %th= model_class.human_attribute_name(:exterior)
+  %tbody
+    - @vehicles.each do |vehicle|
+      %tr
+        %td= link_to vehicle.id, vehicle_path(vehicle)
+        %td= vehicle.vin
+        %td= vehicle.grade
+        %td= vehicle.price
+        %td= vehicle.year
+        %td= vehicle.mileage
+        %td= vehicle.manufacturer
+        %td= vehicle.model
+        %td= vehicle.series
+        %td= vehicle.body_type.humanize
+        %td= vehicle.interior
+        %td= vehicle.exterior
+

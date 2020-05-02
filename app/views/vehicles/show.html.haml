@@ -1,0 +1,48 @@
+- model_class = Vehicle
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:vin) + ':'
+  = @vehicle.vin
+%p
+  %strong= model_class.human_attribute_name(:grade) + ':'
+  = @vehicle.grade
+%p
+  %strong= model_class.human_attribute_name(:stock) + ':'
+  = @vehicle.stock
+%p
+  %strong= model_class.human_attribute_name(:price) + ':'
+  = @vehicle.price
+%p
+  %strong= model_class.human_attribute_name(:year) + ':'
+  = @vehicle.year
+%p
+  %strong= model_class.human_attribute_name(:mileage) + ':'
+  = @vehicle.mileage
+%p
+  %strong= model_class.human_attribute_name(:manufacturer) + ':'
+  = @vehicle.manufacturer
+%p
+  %strong= model_class.human_attribute_name(:model) + ':'
+  = @vehicle.model
+%p
+  %strong= model_class.human_attribute_name(:series) + ':'
+  = @vehicle.series
+%p
+  %strong= model_class.human_attribute_name(:cylinders) + ':'
+  = @vehicle.cylinders
+%p
+  %strong= model_class.human_attribute_name(:displacement) + ':'
+  = @vehicle.displacement
+%p
+  %strong= model_class.human_attribute_name(:body_type) + ':'
+  = @vehicle.body_type.humanize
+%p
+  %strong= model_class.human_attribute_name(:interior) + ':'
+  = @vehicle.interior
+%p
+  %strong= model_class.human_attribute_name(:exterior) + ':'
+  = @vehicle.exterior
+
+= link_to t('.back', :default => t("helpers.links.back")), vehicles_path, :class => 'btn btn-default'

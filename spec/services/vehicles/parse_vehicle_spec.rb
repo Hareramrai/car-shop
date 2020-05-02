@@ -6,32 +6,32 @@ RSpec.describe Vehicles::ParseVehicle, type: :model do
 
   let(:raw_vehicle) do
     {
-      grade:          vehicle.grade,
-      mileage:        vehicle.mileage,
-      price:          vehicle.price,
-      stocknumber:    vehicle.stock,
-      vin:            vehicle.vin,
-      year:           vehicle.year,
-      body:           model_feature.body_type,
-      cylinders:      model_feature.cylinders,
-      displacement:   model_feature.displacement,
-      make:           model_feature.manufacturer,
-      model:          model_feature.model,
-      series:         model_feature.series,
-      exterior:       model_feature.body_color.exterior,
-      interior:       model_feature.body_color.interior
+      grade: vehicle.grade,
+      mileage: vehicle.mileage,
+      price: vehicle.price,
+      stocknumber: vehicle.stock,
+      vin: vehicle.vin,
+      year: vehicle.year,
+      body: model_feature.body_type,
+      cylinders: model_feature.cylinders,
+      displacement: model_feature.displacement,
+      make: model_feature.manufacturer,
+      model: model_feature.model,
+      series: model_feature.series,
+      exterior: model_feature.body_color.exterior,
+      interior: model_feature.body_color.interior
     }
   end
 
   let(:expected_response) do
     {
-      grade:             vehicle.grade,
-      mileage:           vehicle.mileage,
-      price:             vehicle.price,
-      stock:             vehicle.stock,
-      vin:               vehicle.vin,
-      year:              vehicle.year,
-      model_feature_id:  model_feature.id
+      grade: vehicle.grade,
+      mileage: vehicle.mileage,
+      price: vehicle.price,
+      stock: vehicle.stock,
+      vin: vehicle.vin,
+      year: vehicle.year,
+      model_feature_id: model_feature.id
     }
   end
 

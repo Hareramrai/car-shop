@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Vehicles::CsvImporter, type: :model do
-
   subject { described_class.new(file_name) }
 
   context 'when file path missing' do
@@ -17,11 +16,8 @@ RSpec.describe Vehicles::CsvImporter, type: :model do
     let(:file_name) { 'spec/fixtures/vehicles.csv' }
 
     it 'creates the record in vehicles, model_features & body_colors table' do
-      expect {
-        subject.call
-      }.to change{ Vehicle.count }.by(2).and \
-           change{ ModelFeature.count }.by(1) and \
-           change{ BodyColor.count }.by(2)
+      expect { subject.call }.to change { Vehicle.count }.by(2).and \
+        change { ModelFeature.count }.by(1).and change { BodyColor.count }.by(1)
     end
   end
 end

@@ -5,7 +5,7 @@
 #  id            :bigint           not null, primary key
 #  body_type     :integer
 #  cylinders     :integer
-#  displacement  :integer
+#  displacement  :float
 #  manufacturer  :string
 #  model         :string
 #  series        :string
@@ -26,8 +26,8 @@
 FactoryBot.define do
   factory :model_feature do
     manufacturer { 'Honda' }
-    model { "City" }
-    series { "VXI" }
+    model { 'City' }
+    series { 'VXI' }
     body_type { 'sedan' }
     body_color
   end

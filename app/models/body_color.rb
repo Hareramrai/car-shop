@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: body_colors
@@ -10,10 +12,9 @@
 #
 
 class BodyColor < ApplicationRecord
-
-  #validations
+  # validations
   validates :interior, :exterior, presence: true
 
   # relationship
-  has_many :model_features
+  has_many :model_features, dependent: :destroy
 end
