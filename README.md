@@ -1,7 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple rails application for searching vehicles based on attribute of vehicle.
+We have used postgresql for storing the data and used ransack for implementing search feature.
+
+This application is deployed on heroku and accessible by below the link.
+
+https://vehicleshop.herokuapp.com/
 
 Things you may want to cover:
 
@@ -19,6 +23,8 @@ Things you may want to cover:
 
 * Database initialization
 
+- rails db:setup
+
 * How to run the test suite
 
 - bundle exec rake db:test:prepare
@@ -35,3 +41,10 @@ Things you may want to cover:
 # Import Vehicle CSV file
 
 - rake imports:vehicles["db/data/vehicles_list_2.csv"]
+
+# Improvement
+-  We could improve line number 42 and 51 from `services/vehicles/parse_vehicle.rb` file.
+This could be improve by using in memory storage or redis.
+
+- Also we could explore ElasticSearch if dealing with large data set.
+
